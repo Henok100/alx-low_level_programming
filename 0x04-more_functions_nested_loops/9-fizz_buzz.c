@@ -15,13 +15,15 @@ int main(void)
 	for (h = 1; h <= 100; h++)
 	{
 		if (h % 3 == 0 && h % 5 != 0)
-			printf("%s ", fizz);
+			printf(" %s", fizz);
 		else if (h % 5 == 0 && h % 3 != 0)
-			printf("%s ", buzz);
+			printf(" %s", buzz);
 		else if (h % 3 == 0 && h % 5 == 0)
-			printf("%s ", fibu);
+			printf(" %s", fibu);
+		else if (h == 1)
+			printf("%d", h);
 		else
-			printf("%d ", h);
+			printf(" %d", h);
 	}
 	printf("\n");
 	return (0);
