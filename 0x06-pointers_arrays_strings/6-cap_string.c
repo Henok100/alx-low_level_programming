@@ -20,7 +20,11 @@ char *cap_string(char *x)
 			}
 			continue;
 		}
-		if (x[i] == ' ' || x[i] == '\t' || x[i] == '.')
+		if (x[i] == '\t' || x[i] == '\\')
+		{
+			x[i] = ' ';
+		}
+		if (x[i] == ' ' || x[i] == '.')
 		{
 			++i;
 			if (x[i] == ' ' || x[i] == '\n')
