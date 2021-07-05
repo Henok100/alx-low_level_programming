@@ -1,27 +1,5 @@
 #include "holberton.h"
 #include <stddef.h>
-
-/**
- * compare - returns true if `X` and `Y` are the same.
- * @X: pointer.
- * @Y: Pointer.
- * Return: True or false.
- */
-
-int compare(char *X, char *Y)
-{
-	while (*X && *Y)
-	{
-		if (*X != *Y)
-		{
-			return (0);
-		}
-		X++;
-		Y++;
-	}
-	return (*Y == '\0');
-}
-
 /**
  * _strstr -  a function that locates a substring.
  * @haystack: pointer
@@ -31,13 +9,34 @@ int compare(char *X, char *Y)
 
 char *_strstr(char *haystack, char *needle)
 {
-	while (*haystack != '\0')
+	const char *a;
+	const char *b;
+
+	b = needle;
+	if (*b == 0)
 	{
-		if ((*haystack == *needle) && compare(haystack, needle))
+		return ((char *) haystack);
+	}
+	for (; *haystack != 0; haystack++)
+	{
+		if (*haystack != *b)
 		{
-			return (haystack);
+			continue;
 		}
-		haystack++;
+		a = haystack;
+
+		while (1)
+		{
+			if (*b == 0)
+			{
+				return ((char *) haystack);
+			}
+			if (*a++ != *b++)
+			{
+				break;
+			}
+		}
+		b = needle;
 	}
 	return (NULL);
 }
