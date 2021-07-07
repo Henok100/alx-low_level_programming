@@ -50,5 +50,5 @@ int is_palindrome(char *s)
 {
 	int len = _strlen(s) - 1;
 
-	return (isPalRec(s, 0, len));
+	return (isPal(s, 0, len));
 }
