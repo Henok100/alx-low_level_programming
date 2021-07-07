@@ -35,7 +35,7 @@ int _isPal(char str[], int x, int y)
 	}
 	if (x < y + 1)
 	{
-		return (_isPal(str[], x + 1, y - 1));
+		return (_isPal(str, x + 1, y - 1));
 	}
 	return (1);
 }
@@ -46,7 +46,7 @@ int _isPal(char str[], int x, int y)
  * Return: 1 if true, 0 if false.
  */
 
-int is_palindrome(*s)
+int is_palindrome(char *s)
 {
 	int len = _strlen(s) - 1;
 
