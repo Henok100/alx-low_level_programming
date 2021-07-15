@@ -1,30 +1,38 @@
-#include <stdlib.h>
+/*
+ * File: 2-calloc.c
+ * Auth: Henok Gashaw
+ */
+
 #include "holberton.h"
+#include <stdlib.h>
 
 /**
- * *array_range - creates an array of integers
- * @min: minimum range of values stored
- * @max: maximum range of values stored and number of elements
+ * _calloc - Allocates memory for an array of a certain number
+ *           of elements each of an inputted byte size.
+ * @nmemb: The number of elements.
+ * @size: The byte size of each array element.
  *
- * Return: pointer to the new array
+ * Return: If nmemb = 0, size = 0, or the function fails - NULL.
+ *         Otherwise - a pointer to the allocated memory.
  */
-int *array_range(int min, int max)
+void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *ptr;
-	int i, size;
+	void *mem;
+	char *filler;
+	unsigned int index;
 
-	if (min > max)
+	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	size = max - min + 1;
+	mem = malloc(size * nmemb);
 
-	ptr = malloc(sizeof(int) * size);
-
-	if (ptr == NULL)
+	if (mem == NULL)
 		return (NULL);
 
-	for (i = 0; min <= max; i++)
-		ptr[i] = min++;
+	filler = mem;
 
-	return (ptr);
+	for (index = 0; index < (size * nmemb); index++)
+		filler[index] = '\0';
+
+	return (mem);
 }
