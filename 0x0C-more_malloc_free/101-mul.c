@@ -2,7 +2,6 @@
  * File: 101-mul.c
  * Auth: Henok Gashaw
  */
-
 #include "holberton.h"
 #include <stdlib.h>
 #include <stdio.h>
