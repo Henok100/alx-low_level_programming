@@ -1,9 +1,8 @@
-#ifndef HOLBERTON
-#define HOLBERTON
+#ifndef HOLBERTON_H
+#define HOLBERTON_H
 
 /**
  * File: holberton.h
- * Auth: Henok Gashaw
  * Desc: Header file containing prototypes for all functions
  *       used in the 0x0B-more_malloc_free directory.
  */
